@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H_Decor_Graphix | L'excellence visuelle, de la conception à la réalisation</title>
+    
+    <!-- Google Fonts: Cinzel, Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#0B0B0D',
+                        charcoal: '#121215',
+                        surface: '#18181D',
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F3E5AB',
+                            dark: '#997A15',
+                            muted: 'rgba(212, 175, 55, 0.15)'
+                        }
+                    },
+                    fontFamily: {
+                        cinzel: ['"Cinzel"', 'serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #B8860B 100%)',
+                        'gold-subtle': 'linear-gradient(135deg, rgba(212,175,55,0.18) 0%, rgba(18,18,21,0.95) 100%)',
+                    },
+                    boxShadow: {
+                        'gold-glow': '0 0 25px rgba(212, 175, 55, 0.22)',
+                        'gold-sm': '0 4px 14px rgba(212, 175, 55, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS uniquement pour les micro-animations dorées et les motifs SVG subtils -->
+    <style>
+        body {
+            background-color: #0B0B0D;
+            color: #F4F4F6;
+            overflow-x: hidden;
+        }
+
+        /* Texte dégradé Or Métallique */
+        .text-gold-metallic {
+            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 45%, #AA821C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Bordure fine dorée lumineuse */
+        .border-gold-subtle {
+            border-color: rgba(212, 175, 55, 0.22);
+        }
+
+        .card-luxury {
+            background: linear-gradient(145deg, #151519 0%, #0E0E11 100%);
+            border: 1px solid rgba(212, 175, 55, 0.18);
+            transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .card-luxury:hover {
+            border-color: rgba(212, 175, 55, 0.65);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -10px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Motif géométrique Art Déco en arrière-plan */
+        .bg-artdeco {
+            background-image: radial-gradient(rgba(212, 175, 55, 0.08) 1px, transparent 1px);
+            background-size: 28px 28px;
+        }
+
+        /* Scrollbar personnalisée */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0B0D;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #332B12;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+
+        @keyframes pulseGold {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(212, 175, 55, 0); }
+        }
+        .pulse-gold {
+            animation: pulseGold 2.5s infinite;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-gold selection:text-obsidian">
+
+    <!-- ==================== NOTIFICATION TOAST (Remplace alert) ==================== -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-3 max-w-sm w-full pointer-events-none px-4 sm:px-0"></div>
+
+    <!-- ==================== HEADER & NAVIGATION ==================== -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-obsidian/85 backdrop-blur-md border-b border-gold-subtle">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#accueil" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-gold via-gold-light to-gold-dark p-[1.5px] shadow-gold-sm group-hover:scale-105 transition-transform">
+                        <div class="w-full h-full bg-obsidian rounded-[10px] flex items-center justify-center">
+                            <span class="font-cinzel font-bold text-lg text-gold-metallic tracking-wider">H</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-cinzel font-bold text-lg sm:text-xl tracking-widest text-white">
+                            H_DECOR_<span class="text-gold">GRAPHIX</span>
+                        </span>
+                        <span class="text-[10px] uppercase tracking-[0.22em] text-gold-light/70 hidden sm:block">
+                            Studio Créatif & Atelier
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Navigation Desktop -->
+                <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-gray-300">
+                    <a href="#accueil" class="hover:text-gold transition-colors py-2">Accueil</a>
+                    <a href="#expertises" class="hover:text-gold transition-colors py-2">Expertises</a>
+                    <a href="#services" class="hover:text-gold transition-colors py-2">Services & Tarifs</a>
+                    <a href="#portfolio" class="hover:text-gold transition-colors py-2">Réalisations</a>
+                    <a href="#suivi" class="hover:text-gold transition-colors py-2 flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-gold inline-block"></span> Suivi Commande
+                    </a>
+                </nav>
+
+                <!-- Actions Desktop + Sélecteur Devise -->
+                <div class="hidden md:flex items-center gap-3">
+                    <!-- Sélecteur Devise (FCFA / EUR) -->
+                    <div class="flex items-center bg-charcoal border border-gold-subtle rounded-full p-1 text-xs font-semibold">
+                        <button type="button" onclick="setCurrency('FCFA')" id="btn-curr-fcfa" class="px-3 py-1 rounded-full bg-gold text-obsidian transition-all">FCFA</button>
+                        <button type="button" onclick="setCurrency('EUR')" id="btn-curr-eur" class="px-3 py-1 rounded-full text-gray-400 hover:text-white transition-all">€ EUR</button>
+                    </div>
+
+                    <a href="#commande" class="px-5 py-2.5 rounded-full bg-gold-gradient text-obsidian font-semibold text-sm hover:brightness-110 transition-all shadow-gold-sm flex items-center gap-2">
+                        <span>Commander / Devis</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Bouton Menu Mobile -->
+                <div class="flex items-center gap-2 lg:hidden">
+                    <button type="button" onclick="toggleCurrencyMobile()" id="mobile-curr-badge" class="md:hidden px-2.5 py-1.5 rounded-lg bg-charcoal border border-gold-subtle text-gold text-xs font-bold">
+                        FCFA
+                    </button>
+                    <button id="mobile-menu-btn" aria-label="Ouvrir le menu" class="p-2.5 rounded-xl bg-charcoal border border-gold-subtle text-gold hover:bg-gold/10 transition-colors">
+                        <i class="fa-solid fa-bars text-lg" id="mobile-menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Déroulant -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-charcoal border-b border-gold-subtle px-4 pt-3 pb-6 space-y-2 shadow-2xl">
+            <a href="#accueil" class="mobile-link block px-4 py-3 rounded-xl text-gray-200 hover:bg-gold/10 hover:text-gold font-medium">Accueil</a>
+            <a href="#expertises" class="mobile-link block px-4 py-3 rounded-xl text-gray-200 hover:bg-gold/10 hover:text-gold font-medium">Nos 4 Pôles d'Expertise</a>
+            <a href="#services" class="mobile-link block px-4 py-3 rounded-xl text-gray-200 hover:bg-gold/10 hover:text-gold font-medium">Catalogue & Tarifs</a>
+            <a href="#portfolio" class="mobile-link block px-4 py-3 rounded-xl text-gray-200 hover:bg-gold/10 hover:text-gold font-medium">Galerie des Réalisations</a>
+            <a href="#suivi" class="mobile-link block px-4 py-3 rounded-xl text-gold bg-gold/5 border border-gold/20 font-medium">
+                <i class="fa-solid fa-magnifying-glass-location mr-2"></i>Suivre ma commande
+            </a>
+            <div class="pt-3">
+                <a href="#commande" class="mobile-link w-full py-3.5 rounded-xl bg-gold-gradient text-obsidian font-bold text-center block shadow-gold-sm">
+                    Demander un devis personnalisé
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION (ACCUEIL) ==================== -->
+    <section id="accueil" class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 bg-artdeco overflow-hidden">
+        <!-- Halos lumineux décoratifs -->
+        <div class="absolute top-20 -left-32 w-96 h-96 bg-gold/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-10 -right-32 w-96 h-96 bg-gold/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Colonne Texte -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-charcoal border border-gold/30 text-gold-light text-xs sm:text-sm font-medium">
+                        <span class="w-2 h-2 rounded-full bg-gold pulse-gold"></span>
+                        <span>Graphisme • Peinture • Sérigraphie • Décoration</span>
+                    </div>
+
+                    <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                        <span class="text-gold-metallic font-cinzel block mb-2">H_Decor_Graphix :</span>
+                        l'excellence visuelle, de la conception à la réalisation.
+                    </h1>
+
+                    <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        Nous sublimons vos espaces, vos marques et vos supports textiles grâce à une alliance unique entre créativité digitale de pointe et savoir-faire artisanal haut de gamme.
+                    </p>
+
+                    <!-- Boutons d'action principaux -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#commande" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gold-gradient text-obsidian font-bold text-sm sm:text-base hover:brightness-110 transition-all shadow-gold-glow flex items-center justify-center gap-2.5">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <span>Demander un devis</span>
+                        </a>
+                        <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 rounded-full bg-charcoal border border-gold/40 text-white hover:border-gold hover:bg-gold/10 font-semibold text-sm sm:text-base transition-all flex items-center justify-center gap-2.5">
+                            <i class="fa-regular fa-images text-gold"></i>
+                            <span>Découvrir nos réalisations</span>
+                        </a>
+                    </div>
+
+                    <!-- Statistiques clés -->
+                    <div class="grid grid-cols-3 gap-4 sm:gap-8 pt-8 border-t border-gold-subtle max-w-xl mx-auto lg:mx-0">
+                        <div>
+                            <div class="font-cinzel text-2xl sm:text-3xl font-bold text-gold-metallic">+480</div>
+                            <div class="text-xs sm:text-sm text-gray-400 mt-1">Projets livrés</div>
+                        </div>
+                        <div>
+                            <div class="font-cinzel text-2xl sm:text-3xl font-bold text-gold-metallic">99%</div>
+                            <div class="text-xs sm:text-sm text-gray-400 mt-1">Clients satisfaits</div>
+                        </div>
+                        <div>
+                            <div class="font-cinzel text-2xl sm:text-3xl font-bold text-gold-metallic">4 Pôles</div>
+                            <div class="text-xs sm:text-sm text-gray-400 mt-1">Expertise intégrée</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonne Visuelle Luxueuse (Composition Interactive) -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Cadre doré décoratif -->
+                        <div class="absolute -inset-3 rounded-3xl border border-gold/25 rotate-2 pointer-events-none"></div>
+                        <div class="relative rounded-3xl overflow-hidden bg-charcoal border border-gold/40 shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=85" 
+                                 alt="Intérieur luxueux noir et or réalisé par H_Decor_Graphix"
+                                 onerror="this.src='https://placehold.co/800x900/121215/D4AF37?text=H_Decor_Graphix'"
+                                 class="w-full h-[380px] sm:h-[460px] object-cover opacity-90 hover:scale-105 transition-transform duration-700">
+                            
+                            <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent"></div>
+                            
+                            <!-- Carte flottante de statut en direct -->
+                            <div class="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-obsidian/90 backdrop-blur-md border border-gold/30 flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-11 h-11 rounded-xl bg-gold/15 border border-gold/40 flex items-center justify-center text-gold shrink-0">
+                                        <i class="fa-solid fa-shield-halved text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-gold font-semibold uppercase tracking-wider">Suivi & Qualité Certifiée</p>
+                                        <p class="text-sm text-white font-medium">De la maquette 3D à la pose finale</p>
+                                    </div>
+                                </div>
+                                <a href="#suivi" class="px-3 py-2 rounded-xl bg-gold text-obsidian text-xs font-bold shrink-0 hover:bg-gold-light transition-colors">
+                                    Suivre <i class="fa-solid fa-arrow-right ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== LES 4 PÔLES D'EXPERTISE ==================== -->
+    <section id="expertises" class="py-20 bg-charcoal border-y border-gold-subtle">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-gold uppercase tracking-[0.25em] text-xs font-bold">Savoir-Faire & Précision</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-2">Nos Quatre Pôles d'Excellence</h2>
+                <p class="text-gray-400 mt-3 text-sm sm:text-base">
+                    Une synergie complète pour concevoir votre identité, habiller vos murs, personnaliser vos textiles et sublimer vos intérieurs.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Pôle 1 : Graphisme -->
+                <div class="card-luxury rounded-2xl p-6 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:bg-gold group-hover:text-obsidian transition-all">
+                            <i class="fa-solid fa-pen-nib"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Design Graphique</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-5">
+                            Création de logos luxueux, chartes graphiques complètes, affiches événementielles, packaging et supports de communication haute définition.
+                        </p>
+                    </div>
+                    <a href="#services" onclick="filterServices('graphisme')" class="inline-flex items-center gap-2 text-gold text-sm font-semibold group-hover:translate-x-1 transition-transform">
+                        <span>Voir les tarifs</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Pôle 2 : Peinture -->
+                <div class="card-luxury rounded-2xl p-6 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:bg-gold group-hover:text-obsidian transition-all">
+                            <i class="fa-solid fa-paint-roller"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Peinture & Fresques</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-5">
+                            Peinture bâtiment haut de gamme, effets décoratifs (stuc, marbré, dorure à la feuille), fresques murales artistiques et façades commerciales.
+                        </p>
+                    </div>
+                    <a href="#services" onclick="filterServices('peinture')" class="inline-flex items-center gap-2 text-gold text-sm font-semibold group-hover:translate-x-1 transition-transform">
+                        <span>Voir les tarifs</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Pôle 3 : Sérigraphie -->
+                <div class="card-luxury rounded-2xl p-6 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:bg-gold group-hover:text-obsidian transition-all">
+                            <i class="fa-solid fa-shirt"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Sérigraphie & Marquage</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-5">
+                            Impression textile durable (t-shirts, polos, tenues professionnelles), flocage doré, gravure sur objets publicitaires, sacs et enseignes.
+                        </p>
+                    </div>
+                    <a href="#services" onclick="filterServices('serigraphie')" class="inline-flex items-center gap-2 text-gold text-sm font-semibold group-hover:translate-x-1 transition-transform">
+                        <span>Voir les tarifs</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Pôle 4 : Décoration -->
+                <div class="card-luxury rounded-2xl p-6 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:bg-gold group-hover:text-obsidian transition-all">
+                            <i class="fa-solid fa-couch"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Décoration & Aménagement</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-5">
+                            Design d'intérieur, habillage mural 3D, scénographie événementielle, vitrines de boutiques et installation de luminaires architecturaux.
+                        </p>
+                    </div>
+                    <a href="#services" onclick="filterServices('decoration')" class="inline-flex items-center gap-2 text-gold text-sm font-semibold group-hover:translate-x-1 transition-transform">
+                        <span>Voir les tarifs</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CATALOGUE DES SERVICES & TARIFS ==================== -->
+    <section id="services" class="py-24 bg-obsidian relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                <div>
+                    <span class="text-gold uppercase tracking-[0.25em] text-xs font-bold">Prestations & Grilles Tarifaires</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-2">Catalogue des Services</h2>
+                    <p class="text-gray-400 mt-2 text-sm sm:text-base max-w-xl">
+                        Sélectionnez une catégorie pour explorer nos formules transparentes. Cliquez sur « Commander » pour pré-remplir votre demande.
+                    </p>
+                </div>
+
+                <!-- Switch Devise dans la section -->
+                <div class="flex items-center gap-3 self-start md:self-end bg-charcoal px-4 py-2.5 rounded-2xl border border-gold-subtle">
+                    <span class="text-xs text-gray-400">Devise affichée :</span>
+                    <button type="button" onclick="setCurrency('FCFA')" id="sec-curr-fcfa" class="text-xs font-bold px-2.5 py-1 rounded-lg bg-gold text-obsidian">FCFA</button>
+                    <button type="button" onclick="setCurrency('EUR')" id="sec-curr-eur" class="text-xs font-bold px-2.5 py-1 rounded-lg text-gray-400 hover:text-white">EUR (€)</button>
+                </div>
+            </div>
+
+            <!-- Filtres par catégorie -->
+            <div class="flex flex-wrap gap-2.5 mb-10" id="service-filters">
+                <button type="button" onclick="filterServices('all')" data-cat="all" class="service-tab active px-5 py-2.5 rounded-full text-sm font-semibold bg-gold text-obsidian transition-all">
+                    Tous les services
+                </button>
+                <button type="button" onclick="filterServices('graphisme')" data-cat="graphisme" class="service-tab px-5 py-2.5 rounded-full text-sm font-semibold bg-charcoal text-gray-300 border border-gold-subtle hover:border-gold transition-all">
+                    <i class="fa-solid fa-pen-nib mr-1.5 text-gold"></i>Graphisme
+                </button>
+                <button type="button" onclick="filterServices('peinture')" data-cat="peinture" class="service-tab px-5 py-2.5 rounded-full text-sm font-semibold bg-charcoal text-gray-300 border border-gold-subtle hover:border-gold transition-all">
+                    <i class="fa-solid fa-paint-roller mr-1.5 text-gold"></i>Peinture
+                </button>
+                <button type="button" onclick="filterServices('serigraphie')" data-cat="serigraphie" class="service-tab px-5 py-2.5 rounded-full text-sm font-semibold bg-charcoal text-gray-300 border border-gold-subtle hover:border-gold transition-all">
+                    <i class="fa-solid fa-shirt mr-1.5 text-gold"></i>Sérigraphie
+                </button>
+                <button type="button" onclick="filterServices('decoration')" data-cat="decoration" class="service-tab px-5 py-2.5 rounded-full text-sm font-semibold bg-charcoal text-gray-300 border border-gold-subtle hover:border-gold transition-all">
+                    <i class="fa-solid fa-couch mr-1.5 text-gold"></i>Décoration
+                </button>
+            </div>
+
+            <!-- Grille dynamique des services -->
+            <div id="services-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Injecté via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== GALERIE DES RÉALISATIONS (PORTFOLIO) ==================== -->
+    <section id="portfolio" class="py-24 bg-charcoal border-y border-gold-subtle">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-gold uppercase tracking-[0.25em] text-xs font-bold">Portfolio Sélectif</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-2">Nos Réalisations Signatures</h2>
+                <p class="text-gray-400 mt-3 text-sm sm:text-base">
+                    Explorez nos créations récentes. Cliquez sur un projet pour afficher les spécifications techniques et commander une prestation similaire.
+                </p>
+            </div>
+
+            <!-- Filtres Portfolio -->
+            <div class="flex flex-wrap justify-center gap-2.5 mb-12" id="portfolio-filters">
+                <button type="button" onclick="filterPortfolio('all')" data-pcat="all" class="portfolio-tab px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-gold text-obsidian transition-all">
+                    Toutes les œuvres
+                </button>
+                <button type="button" onclick="filterPortfolio('graphisme')" data-pcat="graphisme" class="portfolio-tab px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-obsidian text-gray-300 border border-gold-subtle hover:border-gold transition-all">
+                    Identité & Graphisme
+                </button>
+                <button type="button" onclick="filterPortfolio('peinture')" data-pcat="peinture" class="portfolio-tab px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-obsidian text-gray-300 border border-gold-subtle hover:border-gold transition-all">
+                    Peinture & Fresques
+                </button>
+                <button type="button" onclick="filterPortfolio('serigraphie')" data-pcat="serigraphie" class="portfolio-tab px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-obsidian text-gray-300 border border-gold-subtle hover:border-gold transition-all">
+                    Sérigraphie Textile
+                </button>
+                <button type="button" onclick="filterPortfolio('decoration')" data-pcat="decoration" class="portfolio-tab px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-obsidian text-gray-300 border border-gold-subtle hover:border-gold transition-all">
+                    Décoration Intérieure
+                </button>
+            </div>
+
+            <!-- Grille Portfolio -->
+            <div id="portfolio-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+                <!-- Injecté via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SUIVI DE COMMANDE EN LIGNE ==================== -->
+    <section id="suivi" class="py-24 bg-obsidian bg-artdeco relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-gold uppercase tracking-[0.25em] text-xs font-bold">Transparence & Traçabilité</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-2">Suivi de Commande en Ligne</h2>
+                <p class="text-gray-400 mt-3 text-sm sm:text-base">
+                    Suivez l'avancement de votre projet en temps réel, de la validation de la maquette jusqu'à la livraison finale.
+                </p>
+            </div>
+
+            <!-- Boîte de recherche de suivi -->
+            <div class="card-luxury rounded-3xl p-6 sm:p-10 shadow-2xl">
+                <form id="tracking-form" class="flex flex-col sm:flex-row gap-3">
+                    <div class="relative flex-1">
+                        <i class="fa-solid fa-barcode absolute left-4 top-1/2 -translate-y-1/2 text-gold"></i>
+                        <input type="text" id="tracking-input" required placeholder="Ex: HDG-2026-8492"
+                               class="w-full pl-11 pr-4 py-4 rounded-2xl bg-obsidian border border-gold/30 text-white placeholder-gray-500 focus:outline-none focus:border-gold font-mono uppercase tracking-wider text-sm sm:text-base">
+                    </div>
+                    <button type="submit" class="px-8 py-4 rounded-2xl bg-gold-gradient text-obsidian font-bold text-sm sm:text-base hover:brightness-110 transition-all shadow-gold-sm shrink-0 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>Rechercher</span>
+                    </button>
+                </form>
+
+                <!-- Codes de démonstration cliquables en un clic -->
+                <div class="mt-4 flex flex-wrap items-center gap-2 text-xs text-gray-400">
+                    <span>Codes de démonstration rapides :</span>
+                    <button type="button" onclick="trackOrder('HDG-2026-8492')" class="px-3 py-1.5 rounded-lg bg-obsidian border border-gold/30 text-gold hover:bg-gold hover:text-obsidian font-mono transition-colors">
+                        HDG-2026-8492
+                    </button>
+                    <button type="button" onclick="trackOrder('HDG-2026-5104')" class="px-3 py-1.5 rounded-lg bg-obsidian border border-gold/30 text-gold hover:bg-gold hover:text-obsidian font-mono transition-colors">
+                        HDG-2026-5104
+                    </button>
+                    <span id="user-recent-codes" class="flex flex-wrap gap-2"></span>
+                </div>
+
+                <!-- Résultat du suivi (affiché dynamiquement) -->
+                <div id="tracking-result" class="mt-8 pt-8 border-t border-gold-subtle">
+                    <!-- Rempli par JS au chargement avec HDG-2026-8492 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ESPACE COMMANDE & DEVIS PERSONNALISÉ ==================== -->
+    <section id="commande" class="py-24 bg-charcoal border-t border-gold-subtle">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+                <!-- Colonne Informations & Garanties -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-gold uppercase tracking-[0.25em] text-xs font-bold">Démarrez votre projet</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">
+                        Passer Commande ou Demander un Devis Sur Mesure
+                    </h2>
+                    <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
+                        Remplissez le formulaire ci-contre avec les détails de votre besoin. Dès validation, un numéro de dossier unique vous est attribué pour suivre l'évolution de votre demande.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-obsidian/70 border border-gold-subtle">
+                            <div class="w-10 h-10 rounded-xl bg-gold/15 text-gold flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">Réponse & Chiffrage sous 24h</h4>
+                                <p class="text-xs text-gray-400 mt-1">Analyse précise par nos directeurs artistiques et chefs d'atelier.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-obsidian/70 border border-gold-subtle">
+                            <div class="w-10 h-10 rounded-xl bg-gold/15 text-gold flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-lock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">Transaction & Acompte Sécurisés</h4>
+                                <p class="text-xs text-gray-400 mt-1">Paiement mobile (Flooz, TMoney), virement bancaire ou carte internationale.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-obsidian/70 border border-gold-subtle">
+                            <div class="w-10 h-10 rounded-xl bg-gold/15 text-gold flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm">Validation Maquette Incluse</h4>
+                                <p class="text-xs text-gray-400 mt-1">Aucune production n'est lancée sans votre accord écrit (BAT).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonne Formulaire Interactif -->
+                <div class="lg:col-span-7">
+                    <div class="card-luxury rounded-3xl p-6 sm:p-10 shadow-2xl">
+                        <form id="order-form" class="space-y-5">
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="client-name" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Nom complet / Entreprise *</label>
+                                    <input type="text" id="client-name" required placeholder="Ex: Kofi Mensah / Maison Élite"
+                                           class="w-full px-4 py-3.5 rounded-xl bg-obsidian border border-gold/25 text-white placeholder-gray-500 focus:outline-none focus:border-gold text-sm">
+                                </div>
+                                <div>
+                                    <label for="client-contact" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Téléphone (WhatsApp) ou Email *</label>
+                                    <input type="text" id="client-contact" required placeholder="Ex: +228 90 00 00 00"
+                                           class="w-full px-4 py-3.5 rounded-xl bg-obsidian border border-gold/25 text-white placeholder-gray-500 focus:outline-none focus:border-gold text-sm">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="order-category" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Pôle d'expertise *</label>
+                                    <select id="order-category" required onchange="updateServiceDropdown()"
+                                            class="w-full px-4 py-3.5 rounded-xl bg-obsidian border border-gold/25 text-white focus:outline-none focus:border-gold text-sm">
+                                        <option value="graphisme">Design Graphique & Identité</option>
+                                        <option value="peinture">Peinture & Fresque Murale</option>
+                                        <option value="serigraphie">Sérigraphie & Marquage Textile</option>
+                                        <option value="decoration">Décoration & Aménagement</option>
+                                        <option value="sur-mesure">Projet Multi-disciplines Sur Mesure</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="order-service" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Prestation souhaitée *</label>
+                                    <select id="order-service" required
+                                            class="w-full px-4 py-3.5 rounded-xl bg-obsidian border border-gold/25 text-white focus:outline-none focus:border-gold text-sm">
+                                        <!-- Rempli dynamiquement -->
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-3 gap-5">
+                                <div>
+                                    <label for="order-quantity" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Quantité / Surface</label>
+                                    <input type="text" id="order-quantity" placeholder="Ex: 50 pièces ou 35 m²"
+                                           class="w-full px-4 py-3.5 rounded-xl bg-obsidian border border-gold/25 text-white placeholder-gray-500 focus:outline-none focus:border-gold text-sm">
+                                </div>
+                                <div>
+                                    <label for="order-budget" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Budget estimé</label>
+                                    <input type="text" id="order-budget" placeholder="Ex: 150 000 FCFA"
+                                           class="w-full px-4 py-3.5 rounded-xl bg-obsidian border border-gold/25 text-white placeholder-gray-500 focus:outline-none focus:border-gold text-sm">
+                                </div>
+                                <div>
+                                    <label for="order-deadline" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Délai souhaité</label>
+                                    <select id="order-deadline" class="w-full px-4 py-3.5 rounded-xl bg-obsidian border border-gold/25 text-white focus:outline-none focus:border-gold text-sm">
+                                        <option value="Standard (5 à 10 jours)">Standard (5-10 j)</option>
+                                        <option value="Express (48h à 72h)">Express (48h-72h)</option>
+                                        <option value="Planifié (Sous 1 mois)">Planifié (1 mois)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="order-description" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Description détaillée du projet *</label>
+                                <textarea id="order-description" rows="4" required placeholder="Précisez vos couleurs préférées (ex: noir et or), dimensions, textes à imprimer, lieu d'intervention..."
+                                          class="w-full px-4 py-3.5 rounded-xl bg-obsidian border border-gold/25 text-white placeholder-gray-500 focus:outline-none focus:border-gold text-sm"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-2xl bg-gold-gradient text-obsidian font-bold text-base hover:brightness-110 transition-all shadow-gold-glow flex items-center justify-center gap-2.5">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Valider la commande et générer mon suivi</span>
+                            </button>
+                        </form>
+
+                        <!-- Confirmation instantanée après soumission -->
+                        <div id="order-confirmation" class="hidden mt-6 p-6 rounded-2xl bg-obsidian border border-gold text-center space-y-4">
+                            <div class="w-14 h-14 rounded-full bg-gold/20 text-gold flex items-center justify-center text-2xl mx-auto">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-white">Demande enregistrée avec succès !</h3>
+                            <p class="text-sm text-gray-300">Conservez précieusement votre numéro de suivi unique :</p>
+                            <div class="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-charcoal border border-gold/50">
+                                <span id="generated-tracking-code" class="font-mono text-xl font-bold text-gold tracking-wider">HDG-2026-0000</span>
+                                <button type="button" onclick="copyTrackingCode()" title="Copier le code" class="p-2 rounded-lg bg-gold/15 text-gold hover:bg-gold hover:text-obsidian transition-colors">
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
+                            </div>
+                            <div class="pt-2">
+                                <button type="button" id="btn-track-now" class="px-6 py-2.5 rounded-full bg-gold text-obsidian text-sm font-bold hover:bg-gold-light transition-colors">
+                                    Suivre l'état de cette commande maintenant
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER COMPLET ==================== -->
+    <footer class="bg-obsidian border-t border-gold-subtle pt-16 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-gold-subtle">
+                <!-- Colonne 1 : Marque -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-lg bg-gold-gradient p-[1.5px]">
+                            <div class="w-full h-full bg-obsidian rounded-[7px] flex items-center justify-center font-cinzel font-bold text-gold">H</div>
+                        </div>
+                        <span class="font-cinzel font-bold text-lg text-white tracking-wider">H_DECOR_<span class="text-gold">GRAPHIX</span></span>
+                    </div>
+                    <p class="text-sm text-gold-light/90 italic font-serif">
+                        « H_Decor_Graphix : l'excellence visuelle, de la conception à la réalisation. »
+                    </p>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Studio créatif et atelier de production spécialisé en design graphique, peinture décorative, sérigraphie textile et aménagement d'espaces.
+                    </p>
+                    <div class="flex items-center gap-3 pt-1">
+                        <a href="#accueil" aria-label="Instagram" class="w-9 h-9 rounded-full bg-charcoal border border-gold-subtle flex items-center justify-center text-gray-300 hover:text-gold hover:border-gold transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#accueil" aria-label="Facebook" class="w-9 h-9 rounded-full bg-charcoal border border-gold-subtle flex items-center justify-center text-gray-300 hover:text-gold hover:border-gold transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#accueil" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-charcoal border border-gold-subtle flex items-center justify-center text-gray-300 hover:text-gold hover:border-gold transition-colors">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="#accueil" aria-label="TikTok" class="w-9 h-9 rounded-full bg-charcoal border border-gold-subtle flex items-center justify-center text-gray-300 hover:text-gold hover:border-gold transition-colors">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Colonne 2 : Navigation -->
+                <div>
+                    <h4 class="font-cinzel font-bold text-sm uppercase tracking-wider text-gold mb-4">Navigation</h4>
+                    <ul class="space-y-2.5 text-sm text-gray-400">
+                        <li><a href="#accueil" class="hover:text-gold transition-colors">Accueil</a></li>
+                        <li><a href="#expertises" class="hover:text-gold transition-colors">Nos 4 Pôles d'Expertise</a></li>
+                        <li><a href="#services" class="hover:text-gold transition-colors">Catalogue & Tarifs</a></li>
+                        <li><a href="#portfolio" class="hover:text-gold transition-colors">Galerie des Réalisations</a></li>
+                        <li><a href="#suivi" class="hover:text-gold transition-colors">Suivi de Commande</a></li>
+                        <li><a href="#commande" class="hover:text-gold transition-colors">Demander un Devis</a></li>
+                    </ul>
+                </div>
+
+                <!-- Colonne 3 : Coordonnées & Horaires -->
+                <div>
+                    <h4 class="font-cinzel font-bold text-sm uppercase tracking-wider text-gold mb-4">Atelier & Contact</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-gold mt-1"></i>
+                            <span>Boulevard du 13 Janvier, Quartier Administratif, Lomé — Togo</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-gold"></i>
+                            <span>+228 90 45 82 10 / +228 98 12 34 56</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-gold"></i>
+                            <span>contact@hdecorgraphix.com</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-regular fa-clock text-gold mt-1"></i>
+                            <span>Lun - Sam : 08h00 – 18h30<br><span class="text-xs text-gray-500">Sur rendez-vous le dimanche</span></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Colonne 4 : Sécurité & Paiements -->
+                <div>
+                    <h4 class="font-cinzel font-bold text-sm uppercase tracking-wider text-gold mb-4">Paiements & Garanties</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                        Toutes vos commandes et données personnelles sont protégées par chiffrement SSL. Facturation officielle et garantie décennale sur travaux de peinture.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-charcoal border border-gold-subtle text-xs font-semibold text-gray-300">
+                            <i class="fa-solid fa-mobile-screen-button text-gold mr-1"></i> TMoney / Flooz
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-charcoal border border-gold-subtle text-xs font-semibold text-gray-300">
+                            <i class="fa-brands fa-cc-visa text-gold mr-1"></i> Visa / Mastercard
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-charcoal border border-gold-subtle text-xs font-semibold text-gray-300">
+                            <i class="fa-solid fa-building-columns text-gold mr-1"></i> Virement
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+                <p>&copy; 2026 H_Decor_Graphix. Tous droits réservés.</p>
+                <div class="flex items-center gap-5">
+                    <span>Conditions Générales de Vente</span>
+                    <span>Politique de Confidentialité</span>
+                    <span class="text-gold"><i class="fa-solid fa-shield-check mr-1"></i>Plateforme Sécurisée</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== MODALE DÉTAILS RÉALISATION (PORTFOLIO) ==================== -->
+    <div id="portfolio-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div class="relative w-full max-w-2xl rounded-3xl bg-charcoal border border-gold/40 overflow-hidden shadow-2xl animate-fadeIn">
+            <button type="button" onclick="closePortfolioModal()" aria-label="Fermer la fenêtre"
+                    class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-obsidian/80 border border-gold/40 text-gold hover:bg-gold hover:text-obsidian flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div id="modal-content">
+                <!-- Contenu injecté dynamiquement -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== JAVASCRIPT INTERACTIF ==================== -->
+    <script>
+        // ==================== DONNÉES DU CATALOGUE SERVICES ====================
+        const servicesData = [
+            {
+                id: 'srv-1',
+                category: 'graphisme',
+                categoryLabel: 'Graphisme',
+                title: 'Identité Visuelle & Logo Prestige',
+                priceFCFA: 75000,
+                priceEUR: 115,
+                unit: 'forfait complet',
+                delay: '3 à 5 jours',
+                popular: true,
+                description: 'Création de logo vectoriel sur mesure, déclinaisons noir & or, palette typographique et charte graphique PDF.',
+                features: ['3 propositions créatives', 'Fichiers sources (AI, EPS, PNG, SVG)', 'Mockups 3D de présentation']
+            },
+            {
+                id: 'srv-2',
+                category: 'graphisme',
+                categoryLabel: 'Graphisme',
+                title: 'Pack Supports Print & Événementiel',
+                priceFCFA: 45000,
+                priceEUR: 70,
+                unit: 'à partir de',
+                delay: '48h à 72h',
+                popular: false,
+                description: 'Conception haute définition de flyers, cartes de visite dorées, roll-ups, affiches grand format et menus.',
+                features: ['Prêt pour impression HD (300 DPI)', 'Formats réseaux sociaux offerts', 'Retouches illimitées avant BAT']
+            },
+            {
+                id: 'srv-3',
+                category: 'peinture',
+                categoryLabel: 'Peinture',
+                title: 'Peinture Décorative & Effet Stuc / Or',
+                priceFCFA: 8500,
+                priceEUR: 13,
+                unit: 'par m²',
+                delay: '2 à 6 jours',
+                popular: true,
+                description: 'Application artistique de peintures texturées, effet marbre, patine métallisée et finitions satinées lavables.',
+                features: ['Préparation complète des supports', 'Peintures écologiques haute tenue', 'Protection intégrale du mobilier']
+            },
+            {
+                id: 'srv-4',
+                category: 'peinture',
+                categoryLabel: 'Peinture',
+                title: 'Fresque Murale & Signalétique Peinte',
+                priceFCFA: 120000,
+                priceEUR: 185,
+                unit: 'par projet',
+                delay: '4 à 7 jours',
+                popular: false,
+                description: 'Réalisation de fresques personnalisées pour restaurants, bureaux, salons de beauté, villas et façades.',
+                features: ['Esquisse numérique préalable', 'Vernis anti-UV haute résistance', 'Peinture intérieure ou extérieure']
+            },
+            {
+                id: 'srv-5',
+                category: 'serigraphie',
+                categoryLabel: 'Sérigraphie',
+                title: 'Sérigraphie Textile Professionnelle (Lot)',
+                priceFCFA: 3500,
+                priceEUR: 5.5,
+                unit: 'par pièce (min. 15)',
+                delay: '3 à 5 jours',
+                popular: true,
+                description: 'Impression haute précision sur t-shirts, polos, sweats et tabliers avec encres plastisol ou dorées métalliques.',
+                features: ['Tenue garantie +60 lavages', 'Textile 100% coton disponible', 'Rendement couleurs éclatant']
+            },
+            {
+                id: 'srv-6',
+                category: 'serigraphie',
+                categoryLabel: 'Sérigraphie',
+                title: 'Objets Publicitaires & Packaging Gravé',
+                priceFCFA: 60000,
+                priceEUR: 92,
+                unit: 'pack 25 unités',
+                delay: '4 à 6 jours',
+                popular: false,
+                description: 'Marquage de luxe sur sacs kraft, coffrets cadeaux, mugs, stylos métalliques et enseignes PVC/Plexiglas.',
+                features: ['Sérigraphie ou gravure laser', 'Idéal cadeaux d\'entreprise', 'Contrôle qualité pièce par pièce']
+            },
+            {
+                id: 'srv-7',
+                category: 'decoration',
+                categoryLabel: 'Décoration',
+                title: 'Habillage Mural 3D & Moulures Classiques',
+                priceFCFA: 25000,
+                priceEUR: 38,
+                unit: 'par m² posé',
+                delay: '3 à 5 jours',
+                popular: true,
+                description: 'Installation de panneaux acoustiques tasseaux bois/noir, moulures murales élégantes et liserés dorés.',
+                features: ['Prise de mesures sur site', 'Intégration rubans LED possible', 'Finition architecturale sans raccord']
+            },
+            {
+                id: 'srv-8',
+                category: 'decoration',
+                categoryLabel: 'Décoration',
+                title: 'Scénographie Boutique & Espace VIP',
+                priceFCFA: 250000,
+                priceEUR: 380,
+                unit: 'sur devis / forfait',
+                delay: '7 à 14 jours',
+                popular: false,
+                description: 'Conception et réalisation clé en main d\'espaces commerciaux, bureaux de direction et stands d\'exposition.',
+                features: ['Plan d\'aménagement & moodboard', 'Coordination peinture & mobilier', 'Installation complète clé en main']
+            }
+        ];
+
+        // ==================== DONNÉES DU PORTFOLIO ====================
+        const portfolioData = [
+            {
+                id: 'port-1',
+                category: 'decoration',
+                categoryLabel: 'Décoration Intérieure',
+                title: 'Salon Exécutif « Palais d\'Or »',
+                client: 'Résidence Privée — Lomé',
+                year: '2026',
+                image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85',
+                summary: 'Habillage mural noir mat avec inserts en laiton brossé, peinture velours et éclairage indirect sur mesure.',
+                specs: ['Surface : 65 m²', 'Durée : 8 jours', 'Techniques : Moulures 3D, peinture velours & dorure']
+            },
+            {
+                id: 'port-2',
+                category: 'graphisme',
+                categoryLabel: 'Design Graphique',
+                title: 'Identité & Packaging « Aurum Parfums »',
+                client: 'Maison Aurum Cosmétiques',
+                year: '2026',
+                image: 'https://images.unsplash.com/photo-1635405074683-96d6921a2a68?auto=format&fit=crop&w=900&q=85',
+                summary: 'Création d\'un monogramme doré à chaud sur étuis noirs texturés et direction artistique complète de la marque.',
+                specs: ['Livrables : Logo, Charte, 6 boîtes produits', 'Durée : 6 jours', 'Finition : Dorure à chaud & vernis sélectif']
+            },
+            {
+                id: 'port-3',
+                category: 'peinture',
+                categoryLabel: 'Peinture & Fresque',
+                title: 'Fresque Géométrique Art Déco',
+                client: 'Lounge Le Prestige',
+                year: '2026',
+                image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=85',
+                summary: 'Peinture murale grand format alliant tracés géométriques dorés métallisés sur fond anthracite profond.',
+                specs: ['Dimensions : 12m x 3.5m', 'Durée : 4 jours', 'Peinture : Acrylique haute densité & pigments or']
+            },
+            {
+                id: 'port-4',
+                category: 'serigraphie',
+                categoryLabel: 'Sérigraphie Textile',
+                title: 'Collection Tenues « Élite Conciergerie »',
+                client: 'Groupe Hôtelier Horizon',
+                year: '2026',
+                image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85',
+                summary: 'Sérigraphie haute précision en encre or métallique sur 120 polos coton piqué noir pour le personnel.',
+                specs: ['Quantité : 120 pièces', 'Durée : 4 jours', 'Technique : Sérigraphie 3 cadres haute opacité']
+            },
+            {
+                id: 'port-5',
+                category: 'decoration',
+                categoryLabel: 'Décoration & Vitrine',
+                title: 'Showroom Bijouterie « Carat Noir »',
+                client: 'Joaillerie Carat',
+                year: '2025',
+                image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85',
+                summary: 'Agencement complet de boutique avec présentoirs éclairés, enseigne lumineuse et peinture effet stuc.',
+                specs: ['Surface : 45 m²', 'Durée : 10 jours', 'Prestations : Décoration, Peinture & Enseigne']
+            },
+            {
+                id: 'port-6',
+                category: 'graphisme',
+                categoryLabel: 'Graphisme & Sérigraphie',
+                title: 'Coffrets VIP Gala Annuel',
+                client: 'Fondation Afrique Créative',
+                year: '2025',
+                image: 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=900&q=85',
+                summary: 'Conception graphique et impression sérigraphique sur coffrets rigides, invitations et carnets personnalisés.',
+                specs: ['Quantité : 200 coffrets', 'Durée : 5 jours', 'Support : Papier cartonné noir 400g & encre or']
+            }
+        ];
+
+        // ==================== DONNÉES DE SUIVI DE COMMANDE ====================
+        const defaultOrders = {
+            'HDG-2026-8492': {
+                code: 'HDG-2026-8492',
+                client: 'Kofi Mensah — Restaurant Le Saphir',
+                service: 'Fresque Murale & Habillage Doré (42 m²)',
+                date: '18 Nov. 2026',
+                estimatedDelivery: '25 Nov. 2026',
+                currentStep: 3, // 1 à 4
+                steps: [
+                    { title: 'Validation & Devis', date: '18 Nov. 2026 • 10:15', desc: 'Devis approuvé et acompte de démarrage confirmé.' },
+                    { title: 'Conception / Maquette', date: '19 Nov. 2026 • 16:40', desc: 'Maquette 3D validée par le client (BAT signé).' },
+                    { title: 'Production / Réalisation', date: '22 Nov. 2026 • En cours', desc: 'Application des couches de fond noir mat et traçage des motifs or en cours sur site.' },
+                    { title: 'Contrôle Qualité & Livraison', date: 'Prévu le 25 Nov. 2026', desc: 'Application du vernis protecteur et réception finale.' }
+                ]
+            },
+            'HDG-2026-5104': {
+                code: 'HDG-2026-5104',
+                client: 'Amina Diallo — Maison Royale',
+                service: 'Sérigraphie 80 Polos & Logo Prestige',
+                date: '12 Nov. 2026',
+                estimatedDelivery: '19 Nov. 2026',
+                currentStep: 4,
+                steps: [
+                    { title: 'Validation & Devis', date: '12 Nov. 2026 • 09:30', desc: 'Commande confirmée pour 80 pièces coton premium.' },
+                    { title: 'Conception / Maquette', date: '13 Nov. 2026 • 14:20', desc: 'Vectorisation du logo et validation du typon sérigraphique.' },
+                    { title: 'Production / Réalisation', date: '16 Nov. 2026 • Terminé', desc: 'Impression en encre or métallique et passage au tunnel de séchage.' },
+                    { title: 'Contrôle Qualité & Livraison', date: '19 Nov. 2026 • Livré', desc: 'Contrôle unitaire effectué et colis remis au client.' }
+                ]
+            }
+        };
+
+        // État global
+        let currentCurrency = 'FCFA';
+        let activeServiceCat = 'all';
+        let activePortfolioCat = 'all';
+
+        // ==================== GESTION DE LA DEVISE ====================
+        function setCurrency(curr) {
+            currentCurrency = curr;
+            
+            // Mise à jour des boutons header & section
+            const btnFcfa = document.getElementById('btn-curr-fcfa');
+            const btnEur = document.getElementById('btn-curr-eur');
+            const secFcfa = document.getElementById('sec-curr-fcfa');
+            const secEur = document.getElementById('sec-curr-eur');
+            const mobileBadge = document.getElementById('mobile-curr-badge');
+
+            if (curr === 'FCFA') {
+                btnFcfa.className = 'px-3 py-1 rounded-full bg-gold text-obsidian transition-all';
+                btnEur.className = 'px-3 py-1 rounded-full text-gray-400 hover:text-white transition-all';
+                secFcfa.className = 'text-xs font-bold px-2.5 py-1 rounded-lg bg-gold text-obsidian';
+                secEur.className = 'text-xs font-bold px-2.5 py-1 rounded-lg text-gray-400 hover:text-white';
+                mobileBadge.textContent = 'FCFA';
+            } else {
+                btnEur.className = 'px-3 py-1 rounded-full bg-gold text-obsidian transition-all';
+                btnFcfa.className = 'px-3 py-1 rounded-full text-gray-400 hover:text-white transition-all';
+                secEur.className = 'text-xs font-bold px-2.5 py-1 rounded-lg bg-gold text-obsidian';
+                secFcfa.className = 'text-xs font-bold px-2.5 py-1 rounded-lg text-gray-400 hover:text-white';
+                mobileBadge.textContent = '€ EUR';
+            }
+
+            renderServices();
+        }
+
+        function toggleCurrencyMobile() {
+            setCurrency(currentCurrency === 'FCFA' ? 'EUR' : 'FCFA');
+        }
+
+        function formatPrice(service) {
+            if (currentCurrency === 'FCFA') {
+                return `${service.priceFCFA.toLocaleString('fr-FR')} FCFA`;
+            }
+            return `${service.priceEUR.toLocaleString('fr-FR')} €`;
+        }
+
+        // ==================== RENDU CATALOGUE SERVICES ====================
+        function filterServices(cat) {
+            activeServiceCat = cat;
+            document.querySelectorAll('.service-tab').forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.className = 'service-tab px-5 py-2.5 rounded-full text-sm font-semibold bg-gold text-obsidian transition-all';
+                } else {
+                    btn.className = 'service-tab px-5 py-2.5 rounded-full text-sm font-semibold bg-charcoal text-gray-300 border border-gold-subtle hover:border-gold transition-all';
+                }
+            });
+            renderServices();
+        }
+
+        function renderServices() {
+            const grid = document.getElementById('services-grid');
+            const filtered = activeServiceCat === 'all' 
+                ? servicesData 
+                : servicesData.filter(s => s.category === activeServiceCat);
+
+            grid.innerHTML = filtered.map(srv => `
+                <div class="card-luxury rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
+                    ${srv.popular ? `<div class="absolute top-4 right-4 px-3 py-1 rounded-full bg-gold/20 border border-gold/50 text-gold text-[11px] font-bold uppercase tracking-wider">Populaire</div>` : ''}
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-widest text-gold">${srv.categoryLabel}</span>
+                        <h3 class="font-serif text-xl font-bold text-white mt-1.5 pr-16">${srv.title}</h3>
+                        
+                        <div class="mt-4 pb-4 border-b border-gold-subtle flex items-baseline gap-2">
+                            <span class="font-cinzel text-2xl sm:text-3xl font-bold text-gold-metallic">${formatPrice(srv)}</span>
+                            <span class="text-xs text-gray-400">/ ${srv.unit}</span>
+                        </div>
+
+                        <p class="text-gray-400 text-sm mt-4 leading-relaxed">${srv.description}</p>
+
+                        <ul class="mt-4 space-y-2">
+                            ${srv.features.map(f => `
+                                <li class="flex items-center gap-2 text-xs text-gray-300">
+                                    <i class="fa-solid fa-check text-gold"></i>
+                                    <span>${f}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-gold-subtle flex items-center justify-between gap-3">
+                        <div class="text-xs text-gray-400">
+                            <i class="fa-regular fa-clock text-gold mr-1"></i> Délai : <strong class="text-gray-200">${srv.delay}</strong>
+                        </div>
+                        <button type="button" onclick="selectServiceForOrder('${srv.category}', '${srv.title.replace(/'/g, "\\'")}', '${formatPrice(srv)}')"
+                                class="px-4 py-2.5 rounded-xl bg-gold text-obsidian font-bold text-xs hover:bg-gold-light transition-colors flex items-center gap-1.5 shrink-0">
+                            <span>Commander</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Pré-remplir le formulaire depuis une carte service ou portfolio
+        function selectServiceForOrder(category, serviceTitle, priceInfo) {
+            const catSelect = document.getElementById('order-category');
+            catSelect.value = category;
+            updateServiceDropdown(serviceTitle);
+            
+            if (priceInfo) {
+                document.getElementById('order-budget').value = priceInfo;
+            }
+
+            const orderSection = document.getElementById('commande');
+            orderSection.scrollIntoView({ behavior: 'smooth' });
+            showToast(`Service « ${serviceTitle} » sélectionné dans le formulaire.`, 'gold');
+        }
+
+        // ==================== RENDU GALERIE PORTFOLIO ====================
+        function filterPortfolio(cat) {
+            activePortfolioCat = cat;
+            document.querySelectorAll('.portfolio-tab').forEach(btn => {
+                if (btn.dataset.pcat === cat) {
+                    btn.className = 'portfolio-tab px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-gold text-obsidian transition-all';
+                } else {
+                    btn.className = 'portfolio-tab px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-obsidian text-gray-300 border border-gold-subtle hover:border-gold transition-all';
+                }
+            });
+            renderPortfolio();
+        }
+
+        function renderPortfolio() {
+            const grid = document.getElementById('portfolio-grid');
+            const filtered = activePortfolioCat === 'all'
+                ? portfolioData
+                : portfolioData.filter(p => p.category === activePortfolioCat);
+
+            grid.innerHTML = filtered.map(item => `
+                <div onclick="openPortfolioModal('${item.id}')" class="group cursor-pointer rounded-2xl overflow-hidden bg-obsidian border border-gold-subtle hover:border-gold transition-all duration-300 flex flex-col">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="${item.image}" alt="${item.title}"
+                             onerror="this.src='https://placehold.co/600x450/121215/D4AF37?text=${encodeURIComponent(item.title)}'"
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/20 to-transparent opacity-80"></div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-obsidian/85 backdrop-blur-md border border-gold/40 text-gold text-xs font-semibold">
+                            ${item.categoryLabel}
+                        </span>
+                        <div class="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-gold text-obsidian flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all">
+                            <i class="fa-solid fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="text-xs text-gray-400 mb-1">${item.client} • ${item.year}</div>
+                            <h3 class="font-serif text-lg font-bold text-white group-hover:text-gold transition-colors">${item.title}</h3>
+                            <p class="text-gray-400 text-xs sm:text-sm mt-2 line-clamp-2">${item.summary}</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-gold-subtle flex items-center justify-between text-xs text-gold font-semibold">
+                            <span>Voir les détails du projet</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openPortfolioModal(id) {
+            const item = portfolioData.find(p => p.id === id);
+            if (!item) return;
+
+            const modal = document.getElementById('portfolio-modal');
+            const content = document.getElementById('modal-content');
+
+            content.innerHTML = `
+                <div class="h-64 sm:h-80 w-full relative">
+                    <img src="${item.image}" alt="${item.title}"
+                         onerror="this.src='https://placehold.co/800x500/121215/D4AF37?text=${encodeURIComponent(item.title)}'"
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent"></div>
+                    <span class="absolute bottom-4 left-6 px-3.5 py-1 rounded-full bg-gold text-obsidian text-xs font-bold uppercase tracking-wider">
+                        ${item.categoryLabel}
+                    </span>
+                </div>
+                <div class="p-6 sm:p-8 space-y-5">
+                    <div>
+                        <p class="text-xs text-gold uppercase tracking-wider">${item.client} — ${item.year}</p>
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1">${item.title}</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">${item.summary}</p>
+                    <div class="grid sm:grid-cols-3 gap-3 pt-2">
+                        ${item.specs.map(spec => `
+                            <div class="p-3 rounded-xl bg-obsidian border border-gold-subtle text-xs text-gray-200 font-medium">
+                                <i class="fa-solid fa-star text-gold mr-1.5"></i>${spec}
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="pt-4 flex flex-col sm:flex-row gap-3 justify-end">
+                        <button type="button" onclick="closePortfolioModal()" class="px-5 py-3 rounded-xl border border-gold-subtle text-gray-300 hover:text-white text-sm font-semibold">
+                            Fermer
+                        </button>
+                        <button type="button" onclick="closePortfolioModal(); selectServiceForOrder('${item.category}', 'Projet similaire : ${item.title.replace(/'/g, "\\'")}', '')"
+                                class="px-6 py-3 rounded-xl bg-gold-gradient text-obsidian font-bold text-sm hover:brightness-110 transition-all">
+                            Commander un projet similaire
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closePortfolioModal() {
+            const modal = document.getElementById('portfolio-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // ==================== GESTION FORMULAIRE & LOCALSTORAGE ====================
+        function updateServiceDropdown(preselectedTitle = null) {
+            const cat = document.getElementById('order-category').value;
+            const srvSelect = document.getElementById('order-service');
+            
+            let options = servicesData.filter(s => cat === 'sur-mesure' || s.category === cat);
+            srvSelect.innerHTML = options.map(s => `<option value="${s.title}">${s.title}</option>`).join('') +
+                                  `<option value="Projet Sur Mesure Personnalisé">Autre / Projet Sur Mesure Personnalisé</option>`;
+
+            if (preselectedTitle) {
+                // Vérifie si l'option existe déjà sinon l'ajoute
+                let exists = Array.from(srvSelect.options).some(opt => opt.value === preselectedTitle);
+                if (!exists) {
+                    const newOpt = document.createElement('option');
+                    newOpt.value = preselectedTitle;
+                    newOpt.textContent = preselectedTitle;
+                    srvSelect.prepend(newOpt);
+                }
+                srvSelect.value = preselectedTitle;
+            }
+        }
+
+        function getStoredOrders() {
+            try {
+                const saved = JSON.parse(localStorage.getItem('hdg_orders') || '{}');
+                return { ...defaultOrders, ...saved };
+            } catch (e) {
+                return defaultOrders;
+            }
+        }
+
+        function saveOrderToStorage(orderObj) {
+            try {
+                const saved = JSON.parse(localStorage.getItem('hdg_orders') || '{}');
+                saved[orderObj.code] = orderObj;
+                localStorage.setItem('hdg_orders', JSON.stringify(saved));
+                renderRecentUserCodes();
+            } catch (e) {
+                console.error('Erreur sauvegarde locale:', e);
+            }
+        }
+
+        function renderRecentUserCodes() {
+            try {
+                const saved = JSON.parse(localStorage.getItem('hdg_orders') || '{}');
+                const codes = Object.keys(saved);
+                const container = document.getElementById('user-recent-codes');
+                if (codes.length > 0) {
+                    container.innerHTML = codes.map(c => `
+                        <button type="button" onclick="trackOrder('${c}')" class="px-3 py-1.5 rounded-lg bg-gold/15 border border-gold text-gold-light hover:bg-gold hover:text-obsidian font-mono transition-colors">
+                            ${c} (Votre commande)
+                        </button>
+                    `).join('');
+                }
+            } catch (e) {}
+        }
+
+        document.getElementById('order-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('client-name').value.trim();
+            const contact = document.getElementById('client-contact').value.trim();
+            const service = document.getElementById('order-service').value;
+            const quantity = document.getElementById('order-quantity').value.trim() || 'Non spécifié';
+            const budget = document.getElementById('order-budget').value.trim() || 'À définir sur devis';
+            const deadline = document.getElementById('order-deadline').value;
+            const description = document.getElementById('order-description').value.trim();
+
+            // Génération d'un numéro unique HDG-2026-XXXX
+            const randomNum = Math.floor(1000 + Math.random() * 9000);
+            const trackingCode = `HDG-2026-${randomNum}`;
+
+            const todayStr = new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: 'short', year: 'numeric' });
+
+            const newOrder = {
+                code: trackingCode,
+                client: `${name} (${contact})`,
+                service: `${service} — Qté: ${quantity}`,
+                date: todayStr,
+                estimatedDelivery: deadline,
+                currentStep: 1,
+                steps: [
+                    { title: 'Validation & Devis', date: `${todayStr} • Reçu`, desc: `Demande enregistrée (${budget}). Description : "${description.substring(0, 80)}${description.length > 80 ? '...' : ''}"` },
+                    { title: 'Conception / Maquette', date: 'En attente de validation devis', desc: 'Nos designers prépareront vos visuels et maquettes 3D.' },
+                    { title: 'Production / Réalisation', date: 'À venir', desc: 'Fabrication en atelier ou intervention sur site.' },
+                    { title: 'Contrôle Qualité & Livraison', date: 'À venir', desc: 'Vérification finale et remise au client.' }
+                ]
+            };
+
+            saveOrderToStorage(newOrder);
+
+            // Afficher le panneau de confirmation
+            document.getElementById('generated-tracking-code').textContent = trackingCode;
+            const confBox = document.getElementById('order-confirmation');
+            confBox.classList.remove('hidden');
+
+            document.getElementById('btn-track-now').onclick = function() {
+                document.getElementById('suivi').scrollIntoView({ behavior: 'smooth' });
+                trackOrder(trackingCode);
+            };
+
+            showToast(`Commande validée ! Code : ${trackingCode}`, 'gold');
+            this.reset();
+            updateServiceDropdown();
+        });
+
+        function copyTrackingCode() {
+            const code = document.getElementById('generated-tracking-code').textContent;
+            const tempInput = document.createElement('input');
+            tempInput.value = code;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showToast(`Code ${code} copié dans le presse-papiers !`, 'gold');
+        }
+
+        // ==================== MODULE SUIVI DE COMMANDE ====================
+        document.getElementById('tracking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const code = document.getElementById('tracking-input').value.trim().toUpperCase();
+            trackOrder(code);
+        });
+
+        function trackOrder(code) {
+            const input = document.getElementById('tracking-input');
+            input.value = code;
+            const orders = getStoredOrders();
+            const order = orders[code];
+            const resultDiv = document.getElementById('tracking-result');
+
+            if (!order) {
+                resultDiv.innerHTML = `
+                    <div class="p-6 rounded-2xl bg-obsidian border border-red-500/40 text-center space-y-2">
+                        <i class="fa-solid fa-circle-exclamation text-red-400 text-2xl"></i>
+                        <h4 class="font-bold text-white">Numéro de suivi introuvable (${code})</h4>
+                        <p class="text-xs sm:text-sm text-gray-400">Vérifiez la saisie ou testez l'un des codes de démonstration ci-dessus.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const progressPercent = ((order.currentStep - 1) / 3) * 100;
+
+            resultDiv.innerHTML = `
+                <div class="space-y-8">
+                    <!-- En-tête dossier -->
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-2xl bg-obsidian border border-gold/30">
+                        <div>
+                            <div class="flex items-center gap-2.5">
+                                <span class="font-mono font-bold text-gold text-lg">${order.code}</span>
+                                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold ${order.currentStep === 4 ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40' : 'bg-gold/20 text-gold border border-gold/40'}">
+                                    ${order.currentStep === 4 ? 'Livré & Terminé' : 'En cours de traitement'}
+                                </span>
+                            </div>
+                            <h4 class="font-serif text-lg sm:text-xl font-bold text-white mt-1">${order.service}</h4>
+                            <p class="text-xs text-gray-400 mt-0.5">Client : ${order.client}</p>
+                        </div>
+                        <div class="sm:text-right text-xs text-gray-400 space-y-1">
+                            <div>Créé le : <strong class="text-gray-200">${order.date}</strong></div>
+                            <div>Livraison estimée : <strong class="text-gold">${order.estimatedDelivery}</strong></div>
+                        </div>
+                    </div>
+
+                    <!-- Barre de progression visuelle -->
+                    <div class="relative pt-2 pb-4">
+                        <div class="hidden sm:block absolute top-7 left-0 right-0 h-1 bg-obsidian rounded-full overflow-hidden">
+                            <div class="h-full bg-gold-gradient transition-all duration-700" style="width: ${progressPercent}%"></div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-4 gap-6 relative z-10">
+                            ${order.steps.map((st, idx) => {
+                                const stepNum = idx + 1;
+                                const isDone = stepNum < order.currentStep;
+                                const isCurrent = stepNum === order.currentStep;
+                                
+                                let badgeClass = 'bg-obsidian border-gray-700 text-gray-500';
+                                if (isDone) badgeClass = 'bg-gold text-obsidian border-gold';
+                                if (isCurrent) badgeClass = 'bg-obsidian text-gold border-gold pulse-gold';
+
+                                return `
+                                    <div class="flex sm:flex-col items-start sm:items-center sm:text-center gap-4 sm:gap-3">
+                                        <div class="w-10 h-10 rounded-full border-2 ${badgeClass} flex items-center justify-center font-bold text-sm shrink-0">
+                                            ${isDone ? '<i class="fa-solid fa-check"></i>' : stepNum}
+                                        </div>
+                                        <div>
+                                            <h5 class="text-sm font-bold ${isDone || isCurrent ? 'text-white' : 'text-gray-500'}">${st.title}</h5>
+                                            <p class="text-[11px] text-gold mt-0.5">${st.date}</p>
+                                            <p class="text-xs text-gray-400 mt-1.5 leading-relaxed">${st.desc}</p>
+                                        </div>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ==================== SYSTÈME DE NOTIFICATION TOAST ====================
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'pointer-events-auto p-4 rounded-2xl bg-charcoal border border-gold text-white shadow-2xl flex items-center gap-3 text-sm transition-all duration-300';
+            toast.innerHTML = `
+                <div class="w-8 h-8 rounded-full bg-gold/20 text-gold flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-sparkles"></i>
+                </div>
+                <span class="flex-1">${message}</span>
+            `;
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(10px)';
+                setTimeout(() => toast.remove(), 300);
+            }, 3800);
+        }
+
+        // ==================== MENU MOBILE & INITIALISATION ====================
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileIcon = document.getElementById('mobile-menu-icon');
+
+        mobileBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                mobileIcon.classList.replace('fa-bars', 'fa-xmark');
+            } else {
+                mobileMenu.classList.add('hidden');
+                mobileIcon.classList.replace('fa-xmark', 'fa-bars');
+            }
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileIcon.classList.replace('fa-xmark', 'fa-bars');
+            });
+        });
+
+        // Fermer la modale au clic extérieur
+        document.getElementById('portfolio-modal').addEventListener('click', function(e) {
+            if (e.target === this) closePortfolioModal();
+        });
+
+        // Initialisation au chargement de la page
+        window.addEventListener('DOMContentLoaded', () => {
+            renderServices();
+            renderPortfolio();
+            updateServiceDropdown();
+            renderRecentUserCodes();
+            trackOrder('HDG-2026-8492');
+        });
+    </script>
+</body>
+</html>
